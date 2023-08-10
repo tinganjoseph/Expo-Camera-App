@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "file-upload",
-    "slug": "file-upload",
+    "name": "camera",
+    "slug": "camera",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

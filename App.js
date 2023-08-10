@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   View, Text, TouchableOpacity,
   ScrollView, StatusBar, Image
@@ -15,9 +15,7 @@ const App = () => {
         // Ask for camera permission
         const { status } = await Camera.requestCameraPermissionsAsync();
         setCameraPermission(status === 'granted');
-
     })();
-    GetLoginAsync();
 }, []);
 
 
@@ -31,11 +29,8 @@ const App = () => {
         aspect: [1, 1],
         quality: 1,
     });
-
     if (!result.canceled) {
-       
-      SetCardImage(result.assets[0].uri);
-       
+      SetCardImage(result.assets[0].uri); 
     }
 };
 
@@ -44,18 +39,15 @@ const App = () => {
       <View className="flex-1 bg-[#ffffff]">
         <StatusBar translucent backgroundColor="rgba(0,0,0,0)" />
         <View className="w-full h-10 bg-white" />
-       
         <View className="justify-center p-2 mt-3 ">
                 <View className="mt-8 items-center">
                     <Text className="text-[#000000] font-bold mx-5 text-[15px]">
-                        File/Image Uploading ..
+                        Camera ...
                     </Text>
                     <Text className="text-[#000000] font-normal  text-xs mx-5  mb-8">
                         Take a Picture with the Camera
                     </Text>
                 </View>
-
-
         </View>
 
         <View className="rounded-lg  mx-1  border-r-2 border-l-2 border-t-2 border-b-2 border-[#eeeeee] justify-center p-2">
@@ -77,7 +69,6 @@ const App = () => {
                 </View>
       </View>
     </TailwindProvider>
-
   )
 }
 
